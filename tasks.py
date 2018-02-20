@@ -1,3 +1,4 @@
+import time
 from celery import Celery
 
 app = Celery(
@@ -9,4 +10,5 @@ app = Celery(
 
 @app.task
 def add(x, y):
+    time.sleep(10)
     return x + y
